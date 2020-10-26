@@ -1,0 +1,66 @@
+:root {
+    /*Colors*/
+    --col-BG: black;
+    --col-text1: rgb(255, 255, 255);
+
+    /*Other*/
+    --main-padding: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--col-BG);
+    height: 100vh;
+    color: var(--col-text1);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 0.8fr 1fr;
+    grid-template-areas: 
+    "nav nav nav"
+    "feature1 feature2 feature3"
+    "signUp signUp signUp"
+    "main main main";
+    gap: 5px;
+}
+
+nav {
+    background: cadetblue;
+    padding: var(--main-padding);
+    grid-area: nav;
+}
+
+main {
+    background: darkslategray;
+    padding: var(--main-padding);
+    grid-area: main;
+}
+
+#signUp {
+    background: rgb(88, 151, 79);
+    padding: var(--main-padding);
+    grid-area: signUp;
+}
+
+#feature1 {
+    background: firebrick;
+    padding: var(--main-padding);
+    grid-area: feature1;
+}
+#feature2 {
+    background: forestgreen;
+    padding: var(--main-padding);
+    grid-area: feature2;
+}
+#feature3 {
+    background: orangered;
+    padding: var(--main-padding);
+    grid-area: feature3;
+}
