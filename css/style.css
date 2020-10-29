@@ -1,3 +1,4 @@
+/*Defined values*/
 :root {
     /*Colors*/
     --col-BG: black;
@@ -7,12 +8,14 @@
     --main-padding: 5px;
 }
 
+/*Reset browser's default settings*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*Main Page Container*/
 .container {
     background-color: var(--col-BG);
     height: 100vh;
@@ -22,23 +25,34 @@
     font-size: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 0.8fr 1fr;
+    grid-template-rows: 0.8fr 1.2fr 0.5fr 1fr;
     grid-template-areas: 
-    "nav nav nav"
+    "header header header"
     "feature1 feature2 feature3"
     "signUp signUp signUp"
     "main main main";
-    gap: 5px;
+    gap: 0px;
 }
 
-nav {
+/*Centers the text vertically*/
+.span-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /*border: 2px dashed white; for testing*/
+}
+
+/*Page Components*/
+#header {
     background: cadetblue;
     padding: var(--main-padding);
-    grid-area: nav;
+    grid-area: header;
 }
 
 main {
-    background: darkslategray;
+    background: dimgray;
     padding: var(--main-padding);
     grid-area: main;
 }
@@ -63,4 +77,32 @@ main {
     background: orangered;
     padding: var(--main-padding);
     grid-area: feature3;
+}
+
+/*Tablet View*/
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1.2fr 2fr 1.5fr 1.5fr;
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "signUp feature1"
+        "feature3 feature2"
+    }
+}
+
+/*Mobile View*/
+@media (max-width: 550px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr 2fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "main"
+        "signUp"
+        "feature1"
+        "feature3"
+        "feature2"
+    }
 }
